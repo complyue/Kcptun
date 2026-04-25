@@ -69,22 +69,24 @@ class StatusMenuManager: NSObject {
         let isOn = defaults.bool(forKey: USERDEFAULTS_KCPTUN_ON)
         if isOn {
             defaults.set(false, forKey: USERDEFAULTS_KCPTUN_ON)
+            defaults.synchronize()
             Kcptun.shared.stop()
             self.makeToast("Kcptun OFF")
         } else {
             defaults.set(true, forKey: USERDEFAULTS_KCPTUN_ON)
+            defaults.synchronize()
             Kcptun.shared.start()
             self.makeToast("Kcptun ON")
         }
-        defaults.synchronize()
-        updateMainMenu()
+        // Always update menu state after toggling
+        self.updateMainMenu()
     }
     
     @IBAction func quit(_ sender: NSMenuItem) {
-        Kcptun.shared.stop()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
-            NSApplication.shared.terminate(self)
-        }
+        // Use stopForQuit() so KCPTUN_STOP notification is NOT sent,
+        // keeping KcptunOn=true for next auto-start.
+        Kcptun.shared.stopForQuit()
+        NSApplication.shared.terminate(self)
     }
     
     @IBAction func showLog(_ sender: NSMenuItem) {
