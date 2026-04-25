@@ -10,7 +10,6 @@ project.xcworkspace/
 
 # Dialogs and Minds (runtime generated)
 .dialogs/
-.minds/
 
 # Task docs (local task management)
 align-dev.tsk/
