@@ -75,7 +75,7 @@
 		BEDC653C253401BE00374734 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BEDC6548253402C100374734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ProfileWindowController.xib; sourceTree = "<group>"; };
 		BEDC6549253402CC00374734 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ProfileWindowController.strings"; sourceTree = "<group>"; };
-		BEFB226324330FC600660C12 /* Kcptun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kcptun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+BEFB226324330FC600660C12 /* KcpProxy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KcpProxy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFB226624330FC600660C12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFB226824330FC800660C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEFB226B24330FC800660C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@ BEB3A0022434000100358D88 /* tinyproxy */,
 			);
 			dependencies = (
 			);
-			name = Kcptun;
-			productName = Kcptun;
+name = KcpProxy;
+productName = KcpProxy;
 			productReference = BEFB226324330FC600660C12 /* Kcptun.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -491,7 +491,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = MacOS.Kcptun;
+PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -512,7 +512,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = MacOS.Kcptun;
+				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -535,7 +535,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcptunTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kcptun.app/Contents/MacOS/Kcptun";
+TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 			};
 			name = Debug;
 		};
@@ -556,7 +556,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcptunTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kcptun.app/Contents/MacOS/Kcptun";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 			};
 			name = Release;
 		};
