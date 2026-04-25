@@ -13,6 +13,9 @@ import ServiceManagement
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Load saved profile before starting kcptun
+        Profile.shared.loadProfile()
+        
         if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPTUN_ON) {
             Kcptun.shared.start()
         }
@@ -25,8 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-        
+        // No-op: Quit menu (stopForQuit) handles kcptun termination.
+        // Calling stop() here causes a race with the terminate callback
+        // in CommandLine.async, leading to SIGSEGV when accessing self.task.
     }
     
     static func getLauncherStatus() -> Bool {
@@ -41,4 +45,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 }
-
