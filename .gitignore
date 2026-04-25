@@ -17,3 +17,4 @@ align-dev.tsk/
 # Build products
 build/
 DerivedData/
+default.profraw
