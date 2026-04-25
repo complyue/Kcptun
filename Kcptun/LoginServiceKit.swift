@@ -7,7 +7,6 @@
 //
 //  Copyright © 2015-2019 Clipy Project.
 //
-
 //
 //  Some code copyright 2009 Naotaka Morimoto.
 //
@@ -73,7 +72,10 @@ public extension LoginServiceKit {
         guard let sharedFileList = LSSharedFileListCreate(nil, kLSSharedFileListSessionLoginItems.takeRetainedValue(), nil) else { return false }
         let loginItemList = sharedFileList.takeRetainedValue()
         let url = URL(fileURLWithPath: path)
-        let loginItemsListSnapshot: NSArray = LSSharedFileListCopySnapshot(loginItemList, nil).takeRetainedValue()
+        
+        guard let snapshot = LSSharedFileListCopySnapshot(loginItemList, nil) else { return false }
+        let loginItemsListSnapshot = snapshot.takeRetainedValue() as NSArray
+        
         guard let loginItems = loginItemsListSnapshot as? [LSSharedFileListItem] else { return false }
         for loginItem in loginItems {
             guard let resolvedUrl = LSSharedFileListItemCopyResolvedURL(loginItem, 0, nil) else { continue }
@@ -92,7 +94,10 @@ private extension LoginServiceKit {
         guard let sharedFileList = LSSharedFileListCreate(nil, kLSSharedFileListSessionLoginItems.takeRetainedValue(), nil) else { return nil }
         let loginItemList = sharedFileList.takeRetainedValue()
         let url = URL(fileURLWithPath: path)
-        let loginItemsListSnapshot: NSArray = LSSharedFileListCopySnapshot(loginItemList, nil).takeRetainedValue()
+        
+        guard let snapshot = LSSharedFileListCopySnapshot(loginItemList, nil) else { return nil }
+        let loginItemsListSnapshot = snapshot.takeRetainedValue() as NSArray
+        
         guard let loginItems = loginItemsListSnapshot as? [LSSharedFileListItem] else { return nil }
         for loginItem in loginItems {
             guard let resolvedUrl = LSSharedFileListItemCopyResolvedURL(loginItem, 0, nil) else { continue }

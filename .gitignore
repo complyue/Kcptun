@@ -1,0 +1,20 @@
+# Xcode
+.DS_Store
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+xcuserdata/
+project.xcworkspace/
+
+# macOS
+.DS_Store
+
+# Dialogs and Minds (runtime generated)
+.dialogs/
+.minds/
+
+# Task docs (local task management)
+align-dev.tsk/
+
+# Build products
+build/
+DerivedData/
