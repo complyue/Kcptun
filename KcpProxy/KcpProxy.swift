@@ -9,10 +9,10 @@
 import Foundation
 
 class KcpProxy {
-    let kcptun = Bundle.main.path(forResource: "client_darwin_amd64", ofType: nil)
+    let clientBinary = Bundle.main.path(forResource: "client_darwin_amd64", ofType: nil)
     static let shared = KcpProxy()
     private var task: Process?
-    // When true, the KCPTUN_STOP notification will NOT update KcpProxyOn.
+    // When true, the KCPROXY_STOP notification will NOT update KcpProxyOn.
     // Used when app is quitting so KcpProxyOn persists for next auto-start.
     private var isQuitting = false
     
@@ -21,11 +21,11 @@ class KcpProxy {
             return
         }
         self.task = Process()
-        CommandLine.async(task: self.task!, shellPath: self.kcptun!, arguments: Profile.shared.arguments(), terminate:  { (finish) in
+        CommandLine.async(task: self.task!, shellPath: self.clientBinary!, arguments: Profile.shared.arguments(), terminate:  { (finish) in
             print("KcpProxy turn off!")
-            // Only post KCPTUN_STOP if NOT quitting (quit handles kill directly).
+            // Only post KCPROXY_STOP if NOT quitting (quit handles kill directly).
             if !self.isQuitting {
-                NotificationCenter.default.post(name: KCPTUN_STOP, object: nil)
+                NotificationCenter.default.post(name: KCPROXY_STOP, object: nil)
             }
         })
     }
@@ -40,7 +40,7 @@ class KcpProxy {
     
     func stopForQuit() {
         // Called only when app is quitting.
-        // Terminate the process directly without posting KCPTUN_STOP
+        // Terminate the process directly without posting KCPROXY_STOP
         // so KcpProxyOn stays true for next auto-start.
         isQuitting = true
         if let t = self.task {

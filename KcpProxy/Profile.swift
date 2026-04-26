@@ -120,7 +120,7 @@ class Profile {
     
     /// Generate tinyproxy.conf content from current profile settings.
     /// Local listen IP = 127.0.0.1 (localhost)
-    /// Upstream proxy = kcptun's local port (127.0.0.1:localPort)
+    /// Upstream proxy = KcpProxy's local port (127.0.0.1:localPort)
     func tinyproxyConf() -> String {
         let listenIP = "127.0.0.1"
         let upstreamProxy = "127.0.0.1:\(self.localPort)"

@@ -15,9 +15,9 @@ extension String {
 }
 
 // KcpProxy Helper
-let KCPTUN_START = Notification.Name("KCPTUN_START")
-let KCPTUN_STOP = Notification.Name("KCPTUN_STOP")
-let USERDEFAULTS_KCPTUN_ON = "KcpProxyOn"
+let KCPROXY_START = Notification.Name("KCPROXY_START")
+let KCPROXY_STOP = Notification.Name("KCPROXY_STOP")
+let USERDEFAULTS_KCPROXY_ON = "KcpProxyOn"
 let USERDEFAULTS_PROFILE = "Profile"
 
 // Tinyproxy Helper
@@ -30,7 +30,7 @@ let _VERSION_XML_URL = "https://raw.githubusercontent.com/paradiseduo/KcpProxy/m
 let _VERSION_XML_LOCAL:String = Bundle.main.bundlePath + "/Contents/Info.plist"
 
 // Log Helper
-let LOG_PATH = "/usr/local/var/log/kcptun"
+let LOG_PATH = "/usr/local/var/log/kcpproxy"
 let LOG_CLEAN_FINISH = Notification.Name("LOG_CLEAN_FINISH")
 
 // Launcher Helper

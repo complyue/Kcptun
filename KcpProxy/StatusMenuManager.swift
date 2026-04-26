@@ -22,16 +22,16 @@ class StatusMenuManager: NSObject {
     
     override func awakeFromNib() {
         updateMainMenu()
-        NotificationCenter.default.addObserver(forName: KCPTUN_START, object: nil, queue: OperationQueue.main) { (noti) in
-            if !UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPTUN_ON) {
-                UserDefaults.standard.set(true, forKey: USERDEFAULTS_KCPTUN_ON)
+        NotificationCenter.default.addObserver(forName: KCPROXY_START, object: nil, queue: OperationQueue.main) { (noti) in
+            if !UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPROXY_ON) {
+                UserDefaults.standard.set(true, forKey: USERDEFAULTS_KCPROXY_ON)
                 UserDefaults.standard.synchronize()
                 self.updateMainMenu()
             }
         }
-        NotificationCenter.default.addObserver(forName: KCPTUN_STOP, object: nil, queue: OperationQueue.main) { (noti) in
-            if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPTUN_ON) {
-                UserDefaults.standard.set(false, forKey: USERDEFAULTS_KCPTUN_ON)
+        NotificationCenter.default.addObserver(forName: KCPROXY_STOP, object: nil, queue: OperationQueue.main) { (noti) in
+            if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPROXY_ON) {
+                UserDefaults.standard.set(false, forKey: USERDEFAULTS_KCPROXY_ON)
                 UserDefaults.standard.synchronize()
                 self.updateMainMenu()
             }
@@ -40,7 +40,7 @@ class StatusMenuManager: NSObject {
     
     func updateMainMenu() {
         let defaults = UserDefaults.standard
-        let isOn = defaults.bool(forKey: USERDEFAULTS_KCPTUN_ON)
+        let isOn = defaults.bool(forKey: USERDEFAULTS_KCPROXY_ON)
         if isOn {
             switchLabel.title = "KcpProxy: On".localized
             switchLabel.image = NSImage(named: NSImage.statusAvailableName)
@@ -66,14 +66,14 @@ class StatusMenuManager: NSObject {
     
     @IBAction func powerSwitch(_ sender: NSMenuItem) {
         let defaults = UserDefaults.standard
-        let isOn = defaults.bool(forKey: USERDEFAULTS_KCPTUN_ON)
+        let isOn = defaults.bool(forKey: USERDEFAULTS_KCPROXY_ON)
         if isOn {
-            defaults.set(false, forKey: USERDEFAULTS_KCPTUN_ON)
+            defaults.set(false, forKey: USERDEFAULTS_KCPROXY_ON)
             defaults.synchronize()
             KcpProxy.shared.stop()
             self.makeToast("KcpProxy OFF")
         } else {
-            defaults.set(true, forKey: USERDEFAULTS_KCPTUN_ON)
+            defaults.set(true, forKey: USERDEFAULTS_KCPROXY_ON)
             defaults.synchronize()
             KcpProxy.shared.start()
             self.makeToast("KcpProxy ON")
@@ -83,7 +83,7 @@ class StatusMenuManager: NSObject {
     }
     
     @IBAction func quit(_ sender: NSMenuItem) {
-        // Use stopForQuit() so KCPTUN_STOP notification is NOT sent,
+        // Use stopForQuit() so KCPROXY_STOP notification is NOT sent,
         // keeping KcpProxyOn=true for next auto-start.
         KcpProxy.shared.stopForQuit()
         NSApplication.shared.terminate(self)

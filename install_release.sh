@@ -3,7 +3,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_FILE="$SCRIPT_DIR/Kcptun.xcodeproj"
+PROJECT_FILE="$SCRIPT_DIR/KcpProxy.xcodeproj"
 SCHEME="KcpProxy"
 CONFIGURATION="Release"
 

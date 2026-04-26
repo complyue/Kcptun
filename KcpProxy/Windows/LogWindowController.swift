@@ -25,7 +25,7 @@ class LogWindowController: NSWindowController, NSWindowDelegate {
         if fileMgr.fileExists(atPath: LOG_PATH) {
             self.tail()
         } else {
-            NotificationCenter.default.addObserver(forName: KCPTUN_START, object: nil, queue: OperationQueue.main) { (noti) in
+            NotificationCenter.default.addObserver(forName: KCPROXY_START, object: nil, queue: OperationQueue.main) { (noti) in
                 if self.task == nil {
                     self.tail()
                 }

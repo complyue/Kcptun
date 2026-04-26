@@ -6,7 +6,7 @@
 </h1>
 
 
-KcpProxy is a GUI program for kcptun on macOS.
+KcpProxy is a GUI program for KcpProxy on macOS.
 
 [![Swift](https://img.shields.io/badge/swift-5.2-orange.svg)](https://swift.org/)
 [![platform](https://img.shields.io/badge/platform-macOS-green.svg)](https://github.com/MobSF/Mobile-Security-Framework-MobSF/)

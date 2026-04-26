@@ -80,7 +80,7 @@ BEFB226324330FC600660C12 /* KcpProxy.app */ = {isa = PBXFileReference; explicitF
 		BEFB226824330FC800660C12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEFB226B24330FC800660C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BEFB226D24330FC800660C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEFB226E24330FC800660C12 /* Kcptun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kcptun.entitlements; sourceTree = "<group>"; };
+		BEFB226E24330FC800660C12 /* KcpProxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KcpProxy.entitlements; sourceTree = "<group>"; };
 		BEFB227324330FC800660C12 /* KcpProxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KcpProxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFB227724330FC800660C12 /* KcpProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KcpProxyTests.swift; sourceTree = "<group>"; };
 		BEFB227924330FC800660C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };

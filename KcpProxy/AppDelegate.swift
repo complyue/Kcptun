@@ -13,10 +13,10 @@ import ServiceManagement
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Load saved profile before starting kcptun
+        // Load saved profile before starting KcpProxy
         Profile.shared.loadProfile()
         
-        if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPTUN_ON) {
+        if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPROXY_ON) {
             KcpProxy.shared.start()
             TinyproxyManager.shared.start()
         }
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // No-op: Quit menu (stopForQuit) handles kcptun termination.
+        // No-op: Quit menu (stopForQuit) handles KcpProxy termination.
         // Calling stop() here causes a race with the terminate callback
         // in CommandLine.async, leading to SIGSEGV when accessing self.task.
     }
