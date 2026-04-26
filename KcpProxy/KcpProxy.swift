@@ -32,8 +32,7 @@ class KcpProxy {
     
     func stop() {
         if let t = self.task {
-            // Kill entire process group to also terminate any orphaned children.
-            killpg(getpgid(t.processIdentifier), SIGTERM)
+            t.terminate()
             t.waitUntilExit()
         }
         self.task = nil
@@ -41,11 +40,11 @@ class KcpProxy {
     
     func stopForQuit() {
         // Called only when app is quitting.
-        // Kill the process group directly without posting KCPTUN_STOP
+        // Terminate the process directly without posting KCPTUN_STOP
         // so KcpProxyOn stays true for next auto-start.
         isQuitting = true
         if let t = self.task {
-            killpg(getpgid(t.processIdentifier), SIGTERM)
+            t.terminate()
         }
         self.task = nil
     }

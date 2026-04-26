@@ -30,7 +30,9 @@ class TinyproxyManager {
         }
         
         self.task = Process()
-        CommandLine.async(task: self.task!, shellPath: bin, arguments: ["-d", "-c", confPath], terminate: { _ in
+        CommandLine.async(task: self.task!, shellPath: bin, arguments: ["-d", "-c", confPath], output: { output in
+            print("Tinyproxy: \(output)")
+        }, terminate: { _ in
             print("Tinyproxy stopped")
         })
         
@@ -39,7 +41,7 @@ class TinyproxyManager {
     
     func stop() {
         if let t = self.task {
-            killpg(getpgid(t.processIdentifier), SIGTERM)
+            t.terminate()
             t.waitUntilExit()
         }
         self.task = nil
