@@ -1,6 +1,6 @@
 //
 //  Profile.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 MacClient. All rights reserved.
@@ -60,10 +60,10 @@ class Profile {
         let user = UserDefaults.standard
         user.setValue(self.json, forKey: USERDEFAULTS_PROFILE)
         user.synchronize()
-        Kcptun.shared.stop()
+        KcpProxy.shared.stop()
         TinyproxyManager.shared.stop()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
-            Kcptun.shared.start()
+            KcpProxy.shared.start()
             TinyproxyManager.shared.start()
         }
     }

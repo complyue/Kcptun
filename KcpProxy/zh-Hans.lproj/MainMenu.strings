@@ -5,13 +5,13 @@
 /* Class = "NSMenuItem"; title = "About"; ObjectID = "OkI-RB-FGS"; */
 "OkI-RB-FGS.title" = "关于";
 
-/* Class = "NSMenuItem"; title = "Kcptun: On"; ObjectID = "T6c-in-eKX"; */
-"T6c-in-eKX.title" = "Kcptun: On";
+/* Class = "NSMenuItem"; title = "KcpProxy: On"; ObjectID = "T6c-in-eKX"; */
+"T6c-in-eKX.title" = "KcpProxy: On";
 
 /* Class = "NSMenuItem"; title = "Feedback"; ObjectID = "YZE-kv-Xfz"; */
 "YZE-kv-Xfz.title" = "问题反馈";
 
-/* Class = "NSMenuItem"; title = "Kcptun Setting"; ObjectID = "aE9-vQ-eLz"; */
+/* Class = "NSMenuItem"; title = "KcpProxy Setting"; ObjectID = "aE9-vQ-eLz"; */
 "aE9-vQ-eLz.title" = "⚙ 设置";
 
 /* Class = "NSMenuItem"; title = "Clean Logs"; ObjectID = "cEI-6G-Uua"; */
@@ -29,8 +29,8 @@
 /* Class = "NSMenuItem"; title = "Launch At Login"; ObjectID = "rsB-sA-cyE"; */
 "rsB-sA-cyE.title" = "开机启动";
 
-/* Class = "NSMenuItem"; title = "Turn Kcptun On"; ObjectID = "tRX-WG-ubg"; */
-"tRX-WG-ubg.title" = "Turn Kcptun On";
+/* Class = "NSMenuItem"; title = "Turn KcpProxy On"; ObjectID = "tRX-WG-ubg"; */
+"tRX-WG-ubg.title" = "Turn KcpProxy On";
 
 /* Class = "NSMenuItem"; title = "Check Update"; ObjectID = "z7Q-zw-6Fo"; */
 "z7Q-zw-6Fo.title" = "检查更新";

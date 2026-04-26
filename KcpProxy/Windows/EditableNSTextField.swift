@@ -1,6 +1,6 @@
 //
 //  EditableNSTextField.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/4/10.
 //  Copyright © 2020 Mac. All rights reserved.

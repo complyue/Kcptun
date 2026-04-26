@@ -1,6 +1,6 @@
 //
 //  StatusMenuManager.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 Mac. All rights reserved.
@@ -42,18 +42,18 @@ class StatusMenuManager: NSObject {
         let defaults = UserDefaults.standard
         let isOn = defaults.bool(forKey: USERDEFAULTS_KCPTUN_ON)
         if isOn {
-            switchLabel.title = "Kcptun: On".localized
+            switchLabel.title = "KcpProxy: On".localized
             switchLabel.image = NSImage(named: NSImage.statusAvailableName)
-            toggleRunning.title = "Turn Kcptun Off".localized
+            toggleRunning.title = "Turn KcpProxy Off".localized
             
             let icon = NSImage(named: "open")
             statusItem.button?.image = icon
             statusItem.menu = statusMenu
             
         } else {
-            switchLabel.title = "Kcptun: Off".localized
+            switchLabel.title = "KcpProxy: Off".localized
             switchLabel.image = NSImage(named: NSImage.statusUnavailableName)
-            toggleRunning.title = "Turn Kcptun On".localized
+            toggleRunning.title = "Turn KcpProxy On".localized
             
             let icon = NSImage(named: "close")
             statusItem.button?.image = icon
@@ -70,13 +70,13 @@ class StatusMenuManager: NSObject {
         if isOn {
             defaults.set(false, forKey: USERDEFAULTS_KCPTUN_ON)
             defaults.synchronize()
-            Kcptun.shared.stop()
-            self.makeToast("Kcptun OFF")
+            KcpProxy.shared.stop()
+            self.makeToast("KcpProxy OFF")
         } else {
             defaults.set(true, forKey: USERDEFAULTS_KCPTUN_ON)
             defaults.synchronize()
-            Kcptun.shared.start()
-            self.makeToast("Kcptun ON")
+            KcpProxy.shared.start()
+            self.makeToast("KcpProxy ON")
         }
         // Always update menu state after toggling
         self.updateMainMenu()
@@ -84,8 +84,8 @@ class StatusMenuManager: NSObject {
     
     @IBAction func quit(_ sender: NSMenuItem) {
         // Use stopForQuit() so KCPTUN_STOP notification is NOT sent,
-        // keeping KcptunOn=true for next auto-start.
-        Kcptun.shared.stopForQuit()
+        // keeping KcpProxyOn=true for next auto-start.
+        KcpProxy.shared.stopForQuit()
         NSApplication.shared.terminate(self)
     }
     

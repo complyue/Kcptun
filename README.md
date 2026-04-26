@@ -1,12 +1,12 @@
 <h1 align="center">
-  <img src="https://github.com/paradiseduo/Kcptun/blob/master/img/icon.png" alt="Kcptun" width="256">
+  <img src="https://github.com/paradiseduo/KcpProxy/blob/master/img/icon.png" alt="KcpProxy" width="256">
   <br>
-  Kcptun
+  KcpProxy
   <br>
 </h1>
 
 
-Kcptun is a GUI program for kcptun on macOS.
+KcpProxy is a GUI program for kcptun on macOS.
 
 [![Swift](https://img.shields.io/badge/swift-5.2-orange.svg)](https://swift.org/)
 [![platform](https://img.shields.io/badge/platform-macOS-green.svg)](https://github.com/MobSF/Mobile-Security-Framework-MobSF/)
@@ -16,32 +16,32 @@ Kcptun is a GUI program for kcptun on macOS.
 
 v1.4
 
-![](https://github.com/paradiseduo/Kcptun/blob/master/img/version.png)
+![](https://github.com/paradiseduo/KcpProxy/blob/master/img/version.png)
 
 
 
 ## Install
-download [here](https://github.com/paradiseduo/Kcptun/releases)
+download [here](https://github.com/paradiseduo/KcpProxy/releases)
 
-and unzip file, Drag Kcptun.app to Applications file
+and unzip file, Drag KcpProxy.app to Applications file
 
 ## Uninstall
-drop Kcptun.app to Trash
+drop KcpProxy.app to Trash
 
 then open Terminal.app and input those commands:
 ```bash
-rm -rf ~/Library/Preferences/MacOS.Kcptun.plist
-rm -rf /usr/local/var/log/kcptun
-rm -rf ~/Library/Caches/MacOS.Kcptun
+rm -rf ~/Library/Preferences/MacOS.KcpProxy.plist
+rm -rf /usr/local/var/log/kcpProxy
+rm -rf ~/Library/Caches/MacOS.KcpProxy
 ```
 
 ## Screenshots
 
 ### Menu
-![](https://github.com/paradiseduo/Kcptun/blob/master/img/menu.png)
+![](https://github.com/paradiseduo/KcpProxy/blob/master/img/menu.png)
 
 ### Setting
-![](https://github.com/paradiseduo/Kcptun/blob/master/img/setting.png)
+![](https://github.com/paradiseduo/KcpProxy/blob/master/img/setting.png)
 
 ## Star Trend
-[![Stargazers over time](https://starchart.cc/paradiseduo/Kcptun.svg)](https://starchart.cc/paradiseduo/Kcptun)
+[![Stargazers over time](https://starchart.cc/paradiseduo/KcpProxy.svg)](https://starchart.cc/paradiseduo/KcpProxy)

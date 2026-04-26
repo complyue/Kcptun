@@ -1,6 +1,6 @@
 //
 //  Launch.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 Mac. All rights reserved.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Kcptun {
+class KcpProxy {
     let kcptun = Bundle.main.path(forResource: "client_darwin_amd64", ofType: nil)
-    static let shared = Kcptun()
+    static let shared = KcpProxy()
     private var task: Process?
-    // When true, the KCPTUN_STOP notification will NOT update KcptunOn.
-    // Used when app is quitting so KcptunOn persists for next auto-start.
+    // When true, the KCPTUN_STOP notification will NOT update KcpProxyOn.
+    // Used when app is quitting so KcpProxyOn persists for next auto-start.
     private var isQuitting = false
     
     func start() {
@@ -22,7 +22,7 @@ class Kcptun {
         }
         self.task = Process()
         CommandLine.async(task: self.task!, shellPath: self.kcptun!, arguments: Profile.shared.arguments(), terminate:  { (finish) in
-            print("Kcptun turn off!")
+            print("KcpProxy turn off!")
             // Only post KCPTUN_STOP if NOT quitting (quit handles kill directly).
             if !self.isQuitting {
                 NotificationCenter.default.post(name: KCPTUN_STOP, object: nil)
@@ -42,7 +42,7 @@ class Kcptun {
     func stopForQuit() {
         // Called only when app is quitting.
         // Kill the process group directly without posting KCPTUN_STOP
-        // so KcptunOn stays true for next auto-start.
+        // so KcpProxyOn stays true for next auto-start.
         isQuitting = true
         if let t = self.task {
             killpg(getpgid(t.processIdentifier), SIGTERM)

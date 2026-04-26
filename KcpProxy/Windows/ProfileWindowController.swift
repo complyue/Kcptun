@@ -1,6 +1,6 @@
 //
 //  ProfileWindowController.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 Mac. All rights reserved.

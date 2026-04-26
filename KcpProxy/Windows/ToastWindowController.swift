@@ -1,6 +1,6 @@
 //
 //  ToastWindowController.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2019/11/6.
 //  Copyright © 2019 ParadiseDuo. All rights reserved.

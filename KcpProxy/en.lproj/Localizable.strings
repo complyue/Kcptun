@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  KcpProxy
+
+  Created by ParadiseDuo on 2020/10/12.
+  Copyright © 2020 Mac. All rights reserved.
+*/
+
+"Turn KcpProxy On" = "Turn KcpProxy On";
+"Turn KcpProxy Off" = "Turn KcpProxy Off";
+"KcpProxy: Off" = "KcpProxy: Off";
+"KcpProxy: On" = "KcpProxy: On";

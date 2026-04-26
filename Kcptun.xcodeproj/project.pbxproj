@@ -16,7 +16,7 @@
 		BEBF3CC12433239000358D88 /* ProfileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF3CBF2433239000358D88 /* ProfileWindowController.swift */; };
 		BEBF3CC52433270000358D88 /* client_darwin_amd64 in Resources */ = {isa = PBXBuildFile; fileRef = BEBF3CC42433270000358D88 /* client_darwin_amd64 */; };
 		BEBF3CC72433271A00358D88 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF3CC62433271A00358D88 /* Profile.swift */; };
-		BEBF3CEC24336B4100358D88 /* Kcptun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF3CEB24336B4100358D88 /* Kcptun.swift */; };
+		BEBF3CEC24336B4100358D88 /* KcpProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBF3CEB24336B4100358D88 /* KcpProxy.swift */; };
 		BEBF3CF024336BCC00358D88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBF3CEE24336BB500358D88 /* SystemConfiguration.framework */; };
 		BEC46F012433925800B68C51 /* VersionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC46F002433925800B68C51 /* VersionChecker.swift */; };
 		BEDC65282533FC6900374734 /* LoginServiceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDC65272533FC6900374734 /* LoginServiceKit.swift */; };
@@ -25,7 +25,7 @@
 		BEFB226724330FC600660C12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB226624330FC600660C12 /* AppDelegate.swift */; };
 		BEFB226924330FC800660C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEFB226824330FC800660C12 /* Assets.xcassets */; };
 		BEFB226C24330FC800660C12 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEFB226A24330FC800660C12 /* MainMenu.xib */; };
-		BEFB227824330FC800660C12 /* KcptunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB227724330FC800660C12 /* KcptunTests.swift */; };
+		BEFB227824330FC800660C12 /* KcpProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB227724330FC800660C12 /* KcpProxyTests.swift */; };
 		BEFB228424331BAE00660C12 /* StatusMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB228324331BAE00660C12 /* StatusMenuManager.swift */; };
 		E8792C022440291A003C2145 /* EditableNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8792C012440291A003C2145 /* EditableNSTextField.swift */; };
 		E8792C022440291A003C2145 /* EditableNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8792C012440291A003C2145 /* EditableNSTextField.swift */; };
@@ -40,7 +40,7 @@
 			containerPortal = BEFB225B24330FC600660C12 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BEFB226224330FC600660C12;
-			remoteInfo = Kcptun;
+			remoteInfo = KcpProxy;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -66,7 +66,7 @@
 		BEBF3CBF2433239000358D88 /* ProfileWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWindowController.swift; sourceTree = "<group>"; };
 		BEBF3CC42433270000358D88 /* client_darwin_amd64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = client_darwin_amd64; sourceTree = "<group>"; };
 		BEBF3CC62433271A00358D88 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		BEBF3CEB24336B4100358D88 /* Kcptun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kcptun.swift; sourceTree = "<group>"; };
+		BEBF3CEB24336B4100358D88 /* KcpProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KcpProxy.swift; sourceTree = "<group>"; };
 		BEBF3CEE24336BB500358D88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BEC46F002433925800B68C51 /* VersionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChecker.swift; sourceTree = "<group>"; };
 		BEDC65272533FC6900374734 /* LoginServiceKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginServiceKit.swift; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@ BEFB226324330FC600660C12 /* KcpProxy.app */ = {isa = PBXFileReference; explicitF
 		BEFB226B24330FC800660C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BEFB226D24330FC800660C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFB226E24330FC800660C12 /* Kcptun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kcptun.entitlements; sourceTree = "<group>"; };
-		BEFB227324330FC800660C12 /* KcptunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KcptunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEFB227724330FC800660C12 /* KcptunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KcptunTests.swift; sourceTree = "<group>"; };
+		BEFB227324330FC800660C12 /* KcpProxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KcpProxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEFB227724330FC800660C12 /* KcpProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KcpProxyTests.swift; sourceTree = "<group>"; };
 		BEFB227924330FC800660C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFB228324331BAE00660C12 /* StatusMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuManager.swift; sourceTree = "<group>"; };
 		E8792C012440291A003C2145 /* EditableNSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableNSTextField.swift; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@ BEB3A0022434000100358D88 /* tinyproxy */ = {isa = PBXFileReference; lastKnownFil
 		BEFB225A24330FC600660C12 = {
 			isa = PBXGroup;
 			children = (
-				BEFB226524330FC600660C12 /* Kcptun */,
-				BEFB227624330FC800660C12 /* KcptunTests */,
+				BEFB226524330FC600660C12 /* KcpProxy */,
+				BEFB227624330FC800660C12 /* KcpProxyTests */,
 				BEFB226424330FC600660C12 /* Products */,
 				BEBF3CED24336BB500358D88 /* Frameworks */,
 			);
@@ -144,20 +144,20 @@ BEB3A0022434000100358D88 /* tinyproxy */ = {isa = PBXFileReference; lastKnownFil
 		BEFB226424330FC600660C12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEFB226324330FC600660C12 /* Kcptun.app */,
-				BEFB227324330FC800660C12 /* KcptunTests.xctest */,
+				BEFB226324330FC600660C12 /* KcpProxy.app */,
+				BEFB227324330FC800660C12 /* KcpProxyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEFB226524330FC600660C12 /* Kcptun */ = {
+		BEFB226524330FC600660C12 /* KcpProxy */ = {
 			isa = PBXGroup;
 			children = (
 				BEBF3CC42433270000358D88 /* client_darwin_amd64 */,
 				BEFB226624330FC600660C12 /* AppDelegate.swift */,
 				BEFB228324331BAE00660C12 /* StatusMenuManager.swift */,
 				BEBF3CC62433271A00358D88 /* Profile.swift */,
-				BEBF3CEB24336B4100358D88 /* Kcptun.swift */,
+				BEBF3CEB24336B4100358D88 /* KcpProxy.swift */,
 				BE33FF6624358CAF0053914C /* CommandLine.swift */,
 				BE33FF69243595CF0053914C /* Configuration.swift */,
 				BEC46F002433925800B68C51 /* VersionChecker.swift */,
@@ -166,29 +166,29 @@ BEB3A0022434000100358D88 /* tinyproxy */ = {isa = PBXFileReference; lastKnownFil
 				BEFB226824330FC800660C12 /* Assets.xcassets */,
 				BEFB226A24330FC800660C12 /* MainMenu.xib */,
 				BEFB226D24330FC800660C12 /* Info.plist */,
-				BEFB226E24330FC800660C12 /* Kcptun.entitlements */,
+				BEFB226E24330FC800660C12 /* KcpProxy.entitlements */,
 				BEDC6539253401BD00374734 /* Localizable.strings */,
 BEB3A0022434000100358D88 /* tinyproxy */,
 				BEB3A0042434000200358D88 /* TinyproxyManager.swift */,
 			);
-			path = Kcptun;
+			path = KcpProxy;
 			sourceTree = "<group>";
 		};
-		BEFB227624330FC800660C12 /* KcptunTests */ = {
+		BEFB227624330FC800660C12 /* KcpProxyTests */ = {
 			isa = PBXGroup;
 			children = (
-				BEFB227724330FC800660C12 /* KcptunTests.swift */,
+				BEFB227724330FC800660C12 /* KcpProxyTests.swift */,
 				BEFB227924330FC800660C12 /* Info.plist */,
 			);
-			path = KcptunTests;
+			path = KcpProxyTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEFB226224330FC600660C12 /* Kcptun */ = {
+		BEFB226224330FC600660C12 /* KcpProxy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEFB227C24330FC800660C12 /* Build configuration list for PBXNativeTarget "Kcptun" */;
+			buildConfigurationList = BEFB227C24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcpProxy" */;
 			buildPhases = (
 				BEFB225F24330FC600660C12 /* Sources */,
 				BEFB226024330FC600660C12 /* Frameworks */,
@@ -201,12 +201,12 @@ BEB3A0022434000100358D88 /* tinyproxy */,
 			);
 name = KcpProxy;
 productName = KcpProxy;
-			productReference = BEFB226324330FC600660C12 /* Kcptun.app */;
+			productReference = BEFB226324330FC600660C12 /* KcpProxy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BEFB227224330FC800660C12 /* KcptunTests */ = {
+		BEFB227224330FC800660C12 /* KcpProxyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEFB227F24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcptunTests" */;
+			buildConfigurationList = BEFB227F24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcpProxyTests" */;
 			buildPhases = (
 				BEFB226F24330FC800660C12 /* Sources */,
 				BEFB227024330FC800660C12 /* Frameworks */,
@@ -217,9 +217,9 @@ productName = KcpProxy;
 			dependencies = (
 				BEFB227524330FC800660C12 /* PBXTargetDependency */,
 			);
-			name = KcptunTests;
-			productName = KcptunTests;
-			productReference = BEFB227324330FC800660C12 /* KcptunTests.xctest */;
+			name = KcpProxyTests;
+			productName = KcpProxyTests;
+			productReference = BEFB227324330FC800660C12 /* KcpProxyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@ productName = KcpProxy;
 					};
 				};
 			};
-			buildConfigurationList = BEFB225E24330FC600660C12 /* Build configuration list for PBXProject "Kcptun" */;
+			buildConfigurationList = BEFB225E24330FC600660C12 /* Build configuration list for PBXProject "KcpProxy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -260,8 +260,8 @@ productName = KcpProxy;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEFB226224330FC600660C12 /* Kcptun */,
-				BEFB227224330FC800660C12 /* KcptunTests */,
+				BEFB226224330FC600660C12 /* KcpProxy */,
+				BEFB227224330FC800660C12 /* KcpProxyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,7 +305,7 @@ BEB3A0012434000100358D88 /* tinyproxy in Resources */,
 				BE33FF6724358CAF0053914C /* CommandLine.swift in Sources */,
 				BEFB228424331BAE00660C12 /* StatusMenuManager.swift in Sources */,
 				BE33FF772435AFD80053914C /* ToastWindowController.swift in Sources */,
-				BEBF3CEC24336B4100358D88 /* Kcptun.swift in Sources */,
+				BEBF3CEC24336B4100358D88 /* KcpProxy.swift in Sources */,
 				BEDC65282533FC6900374734 /* LoginServiceKit.swift in Sources */,
 				BEFB226724330FC600660C12 /* AppDelegate.swift in Sources */,
 BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
@@ -316,7 +316,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEFB227824330FC800660C12 /* KcptunTests.swift in Sources */,
+				BEFB227824330FC800660C12 /* KcpProxyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +325,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 /* Begin PBXTargetDependency section */
 		BEFB227524330FC800660C12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEFB226224330FC600660C12 /* Kcptun */;
+			target = BEFB226224330FC600660C12 /* KcpProxy */;
 			targetProxy = BEFB227424330FC800660C12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,7 +484,7 @@ BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HRTKN7NJBD;
-				INFOPLIST_FILE = Kcptun/Info.plist;
+				INFOPLIST_FILE = KcpProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -505,7 +505,7 @@ PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxy;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = HRTKN7NJBD;
-				INFOPLIST_FILE = Kcptun/Info.plist;
+				INFOPLIST_FILE = KcpProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -525,14 +525,14 @@ PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxy;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KcptunTests/Info.plist;
+				INFOPLIST_FILE = KcpProxyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcptunTests;
+				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
@@ -546,14 +546,14 @@ TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KcptunTests/Info.plist;
+				INFOPLIST_FILE = KcpProxyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcptunTests;
+				PRODUCT_BUNDLE_IDENTIFIER = MacOS.KcpProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
@@ -563,7 +563,7 @@ TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEFB225E24330FC600660C12 /* Build configuration list for PBXProject "Kcptun" */ = {
+		BEFB225E24330FC600660C12 /* Build configuration list for PBXProject "KcpProxy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEFB227A24330FC800660C12 /* Debug */,
@@ -572,7 +572,7 @@ TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEFB227C24330FC800660C12 /* Build configuration list for PBXNativeTarget "Kcptun" */ = {
+		BEFB227C24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcpProxy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEFB227D24330FC800660C12 /* Debug */,
@@ -581,7 +581,7 @@ TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KcpProxy.app/Contents/MacOS/KcpProxy";
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEFB227F24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcptunTests" */ = {
+		BEFB227F24330FC800660C12 /* Build configuration list for PBXNativeTarget "KcpProxyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEFB228024330FC800660C12 /* Debug */,

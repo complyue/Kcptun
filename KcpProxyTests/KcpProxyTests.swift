@@ -1,15 +1,15 @@
 //
-//  KcptunTests.swift
-//  KcptunTests
+//  KcpProxyTests.swift
+//  KcpProxyTests
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 Mac. All rights reserved.
 //
 
 import XCTest
-@testable import Kcptun
+@testable import KcpProxy
 
-class KcptunTests: XCTestCase {
+class KcpProxyTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

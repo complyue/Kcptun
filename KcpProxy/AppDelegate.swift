@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by ParadiseDuo on 2020/3/31.
 //  Copyright © 2020 Mac. All rights reserved.
@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Profile.shared.loadProfile()
         
         if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPTUN_ON) {
-            Kcptun.shared.start()
+            KcpProxy.shared.start()
             TinyproxyManager.shared.start()
         }
         

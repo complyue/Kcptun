@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ProfileWindowController" customModule="Kcptun" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="ProfileWindowController" customModule="KcpProxy" customModuleProvider="target">
             <connections>
                 <outlet property="crypt" destination="Zlf-kt-Riv" id="rFk-FD-PVf"/>
                 <outlet property="datashard" destination="Pa3-Vz-0cn" id="jNJ-nl-Izo"/>
@@ -47,7 +47,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-5x-SCd" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-5x-SCd" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="362" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="FUU-LW-wvV"/>
@@ -71,7 +71,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-Se-lkd" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-Se-lkd" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="362" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="OpS-S1-ngR"/>
@@ -98,7 +98,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G09-DG-h3I" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G09-DG-h3I" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="316" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="a1t-wB-LDN"/>
@@ -125,7 +125,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hEI-1W-Dbl" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hEI-1W-Dbl" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="270" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="QmI-y7-fTa"/>
@@ -161,7 +161,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-Gw-rr2" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-Gw-rr2" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="224" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Sm3-mI-XCs"/>
@@ -188,7 +188,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HIb-Wy-iEI" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HIb-Wy-iEI" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="224" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="dUN-jO-8Ba"/>
@@ -215,7 +215,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hts-mF-Ciz" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hts-mF-Ciz" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="178" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="N2A-cG-ikD"/>
@@ -242,7 +242,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pa3-Vz-0cn" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pa3-Vz-0cn" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="178" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Fut-Vk-AKR"/>
@@ -269,7 +269,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cym-eN-FMj" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cym-eN-FMj" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="132" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="AXp-p0-oRv"/>
@@ -296,7 +296,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-Yf-HtQ" customClass="EditableNSTextField" customModule="Kcptun" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-Yf-HtQ" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="132" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="dYV-Ja-8Q0"/>

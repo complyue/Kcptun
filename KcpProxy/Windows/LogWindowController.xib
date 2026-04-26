@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LogWindowController" customModule="Kcptun" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="LogWindowController" customModule="KcpProxy" customModuleProvider="target">
             <connections>
                 <outlet property="scrollView" destination="ENg-uG-Kqo" id="OHx-iJ-Ee8"/>
                 <outlet property="textView" destination="gIL-vT-tjY" id="Qvy-C1-kkn"/>

@@ -1,6 +1,6 @@
 //
 //  TinyproxyManager.swift
-//  Kcptun
+//  KcpProxy
 //
 //  Created by Fullstack Developer on 2025/4/26.
 //  Copyright © 2020 Mac. All rights reserved.
