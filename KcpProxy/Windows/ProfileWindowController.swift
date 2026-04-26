@@ -23,6 +23,9 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var parityshard: EditableNSTextField!
     @IBOutlet weak var dscp: EditableNSTextField!
     @IBOutlet weak var nocomp: NSButton!
+    @IBOutlet weak var tinyproxyPort: EditableNSTextField!
+    @IBOutlet weak var tinyproxyUsername: EditableNSTextField!
+    @IBOutlet weak var tinyproxyPassword: NSSecureTextField!
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -42,6 +45,9 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
         self.parityshard.stringValue = String(profile.parityshard)
         self.dscp.stringValue = String(profile.dscp)
         self.nocomp.state = profile.nocomp ? .on:.off
+        self.tinyproxyPort.stringValue = String(profile.tinyproxyPort)
+        self.tinyproxyUsername.stringValue = profile.tinyproxyUsername
+        self.tinyproxyPassword.stringValue = profile.tinyproxyPassword
     }
     
     
@@ -104,6 +110,14 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
             self.shakeWindows()
             return
         }
+        if let i = Int(self.tinyproxyPort.stringValue), (1<=i && i<=65535) {
+            profile.tinyproxyPort = i
+        } else {
+            self.shakeWindows()
+            return
+        }
+        profile.tinyproxyUsername = self.tinyproxyUsername.stringValue
+        profile.tinyproxyPassword = self.tinyproxyPassword.stringValue
         Profile.shared.saveProfile()
         self.window?.close()
     }

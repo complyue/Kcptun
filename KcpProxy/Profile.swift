@@ -26,11 +26,10 @@ class Profile {
     var dscp: Int = 0
     var nocomp: Bool = true
     
-    // Local HTTP proxy settings (KcpProxy)
-    var localProxyPort: Int = 9876
-    var upstreamProxy: String = "127.0.0.1:1087"
-    var upstreamUsername: String = ""
-    var upstreamPassword: String = ""
+    // Tinyproxy local HTTP proxy settings
+    var tinyproxyPort: Int = 9876
+    var tinyproxyUsername: String = ""
+    var tinyproxyPassword: String = ""
     
     var json: [String: AnyObject] {
         get {
@@ -47,10 +46,9 @@ class Profile {
                                             "parityshard": NSNumber(value: self.parityshard) as AnyObject,
                                             "dscp": NSNumber(value: self.dscp) as AnyObject,
                                             "nocomp": NSNumber(value: self.nocomp) as AnyObject,
-                                            "localProxyPort": NSNumber(value: self.localProxyPort) as AnyObject,
-                                            "upstreamProxy": self.upstreamProxy as AnyObject,
-                                            "upstreamUsername": self.upstreamUsername as AnyObject,
-                                            "upstreamPassword": self.upstreamPassword as AnyObject
+                                            "tinyproxyPort": NSNumber(value: self.tinyproxyPort) as AnyObject,
+                                            "tinyproxyUsername": self.tinyproxyUsername as AnyObject,
+                                            "tinyproxyPassword": self.tinyproxyPassword as AnyObject
                                             ]
             return conf
         }
@@ -83,11 +81,9 @@ class Profile {
             self.parityshard = (p["parityshard"] as? NSNumber)?.intValue ?? 3
             self.dscp = (p["dscp"] as? NSNumber)?.intValue ?? 0
             self.nocomp = (p["nocomp"] as? NSNumber)?.boolValue ?? true
-            // KcpProxy fields
-            self.localProxyPort = (p["localProxyPort"] as? NSNumber)?.intValue ?? 9876
-            self.upstreamProxy = (p["upstreamProxy"] as? String) ?? "127.0.0.1:1087"
-            self.upstreamUsername = (p["upstreamUsername"] as? String) ?? ""
-            self.upstreamPassword = (p["upstreamPassword"] as? String) ?? ""
+            self.tinyproxyPort = (p["tinyproxyPort"] as? NSNumber)?.intValue ?? 9876
+            self.tinyproxyUsername = (p["tinyproxyUsername"] as? String) ?? ""
+            self.tinyproxyPassword = (p["tinyproxyPassword"] as? String) ?? ""
         }
     }
     
@@ -123,12 +119,17 @@ class Profile {
     }
     
     /// Generate tinyproxy.conf content from current profile settings.
-    /// Local proxy: no auth. Upstream proxy: basic auth if username+password set.
+    /// Local listen IP = same as kcptun's host
+    /// Upstream proxy = kcptun's local port (host:localPort)
     func tinyproxyConf() -> String {
+        let listenIP = self.host
+        let upstreamProxy = "\(self.host):\(self.localPort)"
+        
         var lines: [String] = [
             "User nobody",
             "Group nobody",
-            "Port \(localProxyPort)",
+            "Listen \(listenIP)",
+            "Port \(tinyproxyPort)",
             "Timeout 600",
             "MaxClients 100",
             "Allow 127.0.0.1",
@@ -136,9 +137,8 @@ class Profile {
             "LogLevel Info",
         ]
         
-        // Upstream: basic auth if credentials provided
-        if !upstreamUsername.isEmpty && !upstreamPassword.isEmpty {
-            lines.append("upstream http \(upstreamUsername):\(upstreamPassword)@\(upstreamProxy)")
+        if !tinyproxyUsername.isEmpty && !tinyproxyPassword.isEmpty {
+            lines.append("upstream http \(tinyproxyUsername):\(tinyproxyPassword)@\(upstreamProxy)")
         } else {
             lines.append("upstream http \(upstreamProxy)")
         }
