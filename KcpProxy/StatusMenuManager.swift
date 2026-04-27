@@ -71,11 +71,13 @@ class StatusMenuManager: NSObject {
             defaults.set(false, forKey: USERDEFAULTS_KCPROXY_ON)
             defaults.synchronize()
             KcpProxy.shared.stop()
+            ProxyManager.shared.stop()
             self.makeToast("KcpProxy OFF")
         } else {
             defaults.set(true, forKey: USERDEFAULTS_KCPROXY_ON)
             defaults.synchronize()
             KcpProxy.shared.start()
+            ProxyManager.shared.start()
             self.makeToast("KcpProxy ON")
         }
         // Always update menu state after toggling

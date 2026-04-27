@@ -26,10 +26,10 @@ class Profile {
     var dscp: Int = 0
     var nocomp: Bool = true
     
-    // Tinyproxy local HTTP proxy settings
-    var tinyproxyPort: Int = 9876
-    var tinyproxyUsername: String = ""
-    var tinyproxyPassword: String = ""
+    // 3proxy local HTTP proxy settings
+    var proxyPort: Int = 9876
+    var proxyUsername: String = ""
+    var proxyPassword: String = ""
     
     var json: [String: AnyObject] {
         get {
@@ -46,9 +46,9 @@ class Profile {
                                             "parityshard": NSNumber(value: self.parityshard) as AnyObject,
                                             "dscp": NSNumber(value: self.dscp) as AnyObject,
                                             "nocomp": NSNumber(value: self.nocomp) as AnyObject,
-                                            "tinyproxyPort": NSNumber(value: self.tinyproxyPort) as AnyObject,
-                                            "tinyproxyUsername": self.tinyproxyUsername as AnyObject,
-                                            "tinyproxyPassword": self.tinyproxyPassword as AnyObject
+                                            "proxyPort": NSNumber(value: self.proxyPort) as AnyObject,
+                                            "proxyUsername": self.proxyUsername as AnyObject,
+                                            "proxyPassword": self.proxyPassword as AnyObject
                                             ]
             return conf
         }
@@ -59,10 +59,10 @@ class Profile {
         user.setValue(self.json, forKey: USERDEFAULTS_PROFILE)
         user.synchronize()
         KcpProxy.shared.stop()
-        TinyproxyManager.shared.stop()
+        ProxyManager.shared.stop()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
             KcpProxy.shared.start()
-            TinyproxyManager.shared.start()
+            ProxyManager.shared.start()
         }
     }
     
@@ -81,9 +81,10 @@ class Profile {
             self.parityshard = (p["parityshard"] as? NSNumber)?.intValue ?? 3
             self.dscp = (p["dscp"] as? NSNumber)?.intValue ?? 0
             self.nocomp = (p["nocomp"] as? NSNumber)?.boolValue ?? true
-            self.tinyproxyPort = (p["tinyproxyPort"] as? NSNumber)?.intValue ?? 9876
-            self.tinyproxyUsername = (p["tinyproxyUsername"] as? String) ?? ""
-            self.tinyproxyPassword = (p["tinyproxyPassword"] as? String) ?? ""
+            
+            self.proxyPort = (p["proxyPort"] as? NSNumber)?.intValue ?? (p["tinyproxyPort"] as? NSNumber)?.intValue ?? 9876
+            self.proxyUsername = (p["proxyUsername"] as? String) ?? (p["tinyproxyUsername"] as? String) ?? ""
+            self.proxyPassword = (p["proxyPassword"] as? String) ?? (p["tinyproxyPassword"] as? String) ?? ""
         }
     }
     
@@ -98,6 +99,7 @@ class Profile {
                 "--sndwnd","\(self.sndwnd)",
                 "--rcvwnd","\(self.rcvwnd)",
                 "--datashard","\(self.datashard)",
+                "--parityshard","\(self.parityshard)",
                 "--dscp","\(self.dscp)",
                 "--nocomp",
                 "--log",LOG_PATH
@@ -112,36 +114,41 @@ class Profile {
                 "--sndwnd","\(self.sndwnd)",
                 "--rcvwnd","\(self.rcvwnd)",
                 "--datashard","\(self.datashard)",
+                "--parityshard","\(self.parityshard)",
                 "--dscp","\(self.dscp)",
                 "--log",LOG_PATH
             ]
         }
     }
     
-    /// Generate tinyproxy.conf content from current profile settings.
+    /// Generate 3proxy.conf content from current profile settings.
     /// Local listen IP = 127.0.0.1 (localhost)
-    /// Upstream proxy = KcpProxy's local port (127.0.0.1:localPort)
-    func tinyproxyConf() -> String {
+    /// Upstream proxy = KcpProxy's SOCKS local port (127.0.0.1:localPort)
+    func proxyConf() -> String {
         let listenIP = "127.0.0.1"
-        let upstreamProxy = "127.0.0.1:\(self.localPort)"
+        let upstreamIP = "127.0.0.1"
         
         var lines: [String] = [
-            "User nobody",
-            "Group nobody",
-            "Listen \(listenIP)",
-            "Port \(tinyproxyPort)",
-            "Timeout 600",
-            "MaxClients 100",
-            "Allow 127.0.0.1",
-            "Allow ::1",
-            "LogLevel Info",
+            "fakeresolve",
+            "auth iponly",
         ]
         
-        if !tinyproxyUsername.isEmpty && !tinyproxyPassword.isEmpty {
-            lines.append("upstream http \(tinyproxyUsername):\(tinyproxyPassword)@\(upstreamProxy)")
+        if !proxyUsername.isEmpty && !proxyPassword.isEmpty {
+            lines.append("users \(proxyUsername):CL:\(proxyPassword)")
+            lines.append("allow * * * * HTTP")
+            lines.append("parent 1000 http \(upstreamIP) \(self.localPort) \(proxyUsername) \(proxyPassword)")
+            lines.append("allow * * * * HTTP_CONNECT")
+            lines.append("parent 1000 connect+ \(upstreamIP) \(self.localPort) \(proxyUsername) \(proxyPassword)")
         } else {
-            lines.append("upstream http \(upstreamProxy)")
+            lines.append("allow * * * * HTTP")
+            lines.append("parent 1000 http \(upstreamIP) \(self.localPort)")
+            lines.append("allow * * * * HTTP_CONNECT")
+            lines.append("parent 1000 connect+ \(upstreamIP) \(self.localPort)")
         }
+        
+        lines.append("deny *")
+        lines.append("proxy -a -i\(listenIP) -p\(proxyPort)")
+        lines.append("flush")
         
         return lines.joined(separator: "\n") + "\n"
     }

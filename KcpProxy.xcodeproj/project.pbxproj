@@ -29,8 +29,8 @@
 		BEFB228424331BAE00660C12 /* StatusMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB228324331BAE00660C12 /* StatusMenuManager.swift */; };
 		E8792C022440291A003C2145 /* EditableNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8792C012440291A003C2145 /* EditableNSTextField.swift */; };
 		E8792C022440291A003C2145 /* EditableNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8792C012440291A003C2145 /* EditableNSTextField.swift */; };
-		BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3A0042434000200358D88 /* TinyproxyManager.swift */; };
-		BEB3A0012434000100358D88 /* tinyproxy in Resources */ = {isa = PBXBuildFile; fileRef = BEB3A0022434000100358D88 /* tinyproxy */; };
+		BEB3A0032434000200358D88 /* ProxyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3A0042434000200358D88 /* ProxyManager.swift */; };
+		BEB3A0012434000100358D88 /* 3proxy in Resources */ = {isa = PBXBuildFile; fileRef = BEB3A0022434000100358D88 /* 3proxy */; };
 /* End PBXBuildFile section */
 /* End PBXBuildFile section */
 
@@ -86,8 +86,8 @@ BEFB226324330FC600660C12 /* KcpProxy.app */ = {isa = PBXFileReference; explicitF
 		BEFB227924330FC800660C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFB228324331BAE00660C12 /* StatusMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuManager.swift; sourceTree = "<group>"; };
 		E8792C012440291A003C2145 /* EditableNSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableNSTextField.swift; sourceTree = "<group>"; };
-BEB3A0022434000100358D88 /* tinyproxy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = tinyproxy; sourceTree = "<group>"; };
-		BEB3A0042434000200358D88 /* TinyproxyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyproxyManager.swift; sourceTree = "<group>"; };
+		BEB3A0022434000100358D88 /* 3proxy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 3proxy; sourceTree = "<group>"; };
+		BEB3A0042434000200358D88 /* ProxyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +168,8 @@ BEB3A0022434000100358D88 /* tinyproxy */ = {isa = PBXFileReference; lastKnownFil
 				BEFB226D24330FC800660C12 /* Info.plist */,
 				BEFB226E24330FC800660C12 /* KcpProxy.entitlements */,
 				BEDC6539253401BD00374734 /* Localizable.strings */,
-BEB3A0022434000100358D88 /* tinyproxy */,
-				BEB3A0042434000200358D88 /* TinyproxyManager.swift */,
+				BEB3A0022434000100358D88 /* 3proxy */,
+				BEB3A0042434000200358D88 /* ProxyManager.swift */,
 			);
 			path = KcpProxy;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@ productName = KcpProxy;
 				BEBF3CC52433270000358D88 /* client_darwin_amd64 in Resources */,
 				BE7F9DC92434CBBA00EFA114 /* LogWindowController.xib in Resources */,
 				BEFB226C24330FC800660C12 /* MainMenu.xib in Resources */,
-BEB3A0012434000100358D88 /* tinyproxy in Resources */,
+				BEB3A0012434000100358D88 /* 3proxy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@ BEB3A0012434000100358D88 /* tinyproxy in Resources */,
 				BEBF3CEC24336B4100358D88 /* KcpProxy.swift in Sources */,
 				BEDC65282533FC6900374734 /* LoginServiceKit.swift in Sources */,
 				BEFB226724330FC600660C12 /* AppDelegate.swift in Sources */,
-BEB3A0032434000200358D88 /* TinyproxyManager.swift in Sources */,
+				BEB3A0032434000200358D88 /* ProxyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

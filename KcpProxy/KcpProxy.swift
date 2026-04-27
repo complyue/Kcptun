@@ -20,9 +20,13 @@ class KcpProxy {
         if let t = self.task, t.isRunning {
             return
         }
+        let args = Profile.shared.arguments()
+        print("KcpProxy start: binary=\(self.clientBinary ?? "nil"), args=\(args.joined(separator: " "))")
         self.task = Process()
-        CommandLine.async(task: self.task!, shellPath: self.clientBinary!, arguments: Profile.shared.arguments(), terminate:  { (finish) in
-            print("KcpProxy turn off!")
+        CommandLine.async(task: self.task!, shellPath: self.clientBinary!, arguments: args, output: { output in
+            print("KcpProxy: \(output)")
+        }, terminate:  { (status) in
+            print("KcpProxy turn off! exit code=\(status)")
             // Only post KCPROXY_STOP if NOT quitting (quit handles kill directly).
             if !self.isQuitting {
                 NotificationCenter.default.post(name: KCPROXY_STOP, object: nil)

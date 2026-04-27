@@ -20,17 +20,17 @@ let KCPROXY_STOP = Notification.Name("KCPROXY_STOP")
 let USERDEFAULTS_KCPROXY_ON = "KcpProxyOn"
 let USERDEFAULTS_PROFILE = "Profile"
 
-// Tinyproxy Helper
-let TINYPROXY_START = Notification.Name("TINYPROXY_START")
-let TINYPROXY_STOP = Notification.Name("TINYPROXY_STOP")
-let TINYPROXY_CONF_DIR = "/tmp/tinyproxy"
+// 3proxy Helper
+let PROXY_START = Notification.Name("PROXY_START")
+let PROXY_STOP = Notification.Name("PROXY_STOP")
+let PROXY_CONF_DIR = "/tmp/3proxy"
 
 // Version Checker Helper
 let _VERSION_XML_URL = "https://raw.githubusercontent.com/paradiseduo/KcpProxy/master/KcpProxy/Info.plist"
 let _VERSION_XML_LOCAL:String = Bundle.main.bundlePath + "/Contents/Info.plist"
 
 // Log Helper
-let LOG_PATH = "/usr/local/var/log/kcpproxy"
+let LOG_PATH = "/tmp/kcpproxy"
 let LOG_CLEAN_FINISH = Notification.Name("LOG_CLEAN_FINISH")
 
 // Launcher Helper

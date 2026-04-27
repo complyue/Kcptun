@@ -23,9 +23,9 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var parityshard: EditableNSTextField!
     @IBOutlet weak var dscp: EditableNSTextField!
     @IBOutlet weak var nocomp: NSButton!
-    @IBOutlet weak var tinyproxyPort: EditableNSTextField!
-    @IBOutlet weak var tinyproxyUsername: EditableNSTextField!
-    @IBOutlet weak var tinyproxyPassword: NSSecureTextField!
+    @IBOutlet weak var proxyPort: EditableNSTextField!
+    @IBOutlet weak var proxyUsername: EditableNSTextField!
+    @IBOutlet weak var proxyPassword: NSSecureTextField!
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -45,9 +45,9 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
         self.parityshard.stringValue = String(profile.parityshard)
         self.dscp.stringValue = String(profile.dscp)
         self.nocomp.state = profile.nocomp ? .on:.off
-        self.tinyproxyPort.stringValue = String(profile.tinyproxyPort)
-        self.tinyproxyUsername.stringValue = profile.tinyproxyUsername
-        self.tinyproxyPassword.stringValue = profile.tinyproxyPassword
+        self.proxyPort.stringValue = String(profile.proxyPort)
+        self.proxyUsername.stringValue = profile.proxyUsername
+        self.proxyPassword.stringValue = profile.proxyPassword
     }
     
     
@@ -110,14 +110,14 @@ class ProfileWindowController: NSWindowController, NSWindowDelegate {
             self.shakeWindows()
             return
         }
-        if let i = Int(self.tinyproxyPort.stringValue), (1<=i && i<=65535) {
-            profile.tinyproxyPort = i
+        if let i = Int(self.proxyPort.stringValue), (1<=i && i<=65535) {
+            profile.proxyPort = i
         } else {
             self.shakeWindows()
             return
         }
-        profile.tinyproxyUsername = self.tinyproxyUsername.stringValue
-        profile.tinyproxyPassword = self.tinyproxyPassword.stringValue
+        profile.proxyUsername = self.proxyUsername.stringValue
+        profile.proxyPassword = self.proxyPassword.stringValue
         Profile.shared.saveProfile()
         self.window?.close()
     }

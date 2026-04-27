@@ -21,9 +21,9 @@
                 <outlet property="rcvwnd" destination="hts-mF-Ciz" id="wkE-NJ-RRm"/>
                 <outlet property="remotePort" destination="Y9D-Se-lkd" id="SjO-J5-dOg"/>
                 <outlet property="sndwnd" destination="HIb-Wy-iEI" id="rao-T5-cyP"/>
-                <outlet property="tinyproxyPort" destination="tinyproxyPortField" id="tinyproxyPortOutlet"/>
-                <outlet property="tinyproxyUsername" destination="tinyproxyUsernameField" id="tinyproxyUsernameOutlet"/>
-                <outlet property="tinyproxyPassword" destination="tinyproxyPasswordField" id="tinyproxyPasswordOutlet"/>
+                <outlet property="proxyPort" destination="proxyPortField" id="proxyPortOutlet"/>
+                <outlet property="proxyUsername" destination="proxyUsernameField" id="proxyUsernameOutlet"/>
+                <outlet property="proxyPassword" destination="proxyPasswordField" id="proxyPasswordOutlet"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="vMo-qJ-o6w"/>
             </connections>
         </customObject>
@@ -406,7 +406,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tinyproxyPortField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="proxyPortField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="347" y="166" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="tpfW"/>
@@ -418,7 +418,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <outlet property="formatter" destination="tinyproxyPortFormatter" id="tpfFmt"/>
+                            <outlet property="formatter" destination="proxyPortFormatter" id="tpfFmt"/>
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tpUserLabel">
@@ -433,7 +433,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tinyproxyUsernameField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="proxyUsernameField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="127" y="122" width="120" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="tufW"/>
@@ -457,7 +457,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tinyproxyPasswordField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
+                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="proxyPasswordField" customClass="EditableNSTextField" customModule="KcpProxy" customModuleProvider="target">
                         <rect key="frame" x="338" y="122" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="tpdfW"/>
@@ -564,18 +564,18 @@ DQ
                     <constraint firstItem="iUf-Bj-TDt" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="70" id="wYW-mF-Ggx"/>
                     <constraint firstItem="1G4-eL-5ie" firstAttribute="leading" secondItem="hts-mF-Ciz" secondAttribute="trailing" constant="17" id="xjr-79-Wq8"/>
                     <constraint firstItem="gtS-Xr-IKV" firstAttribute="top" secondItem="J1i-bi-sdZ" secondAttribute="bottom" constant="30" id="z6N-Y8-Gv6"/>
-                    <constraint firstItem="tinyproxyPortField" firstAttribute="leading" secondItem="tpPortLabel" secondAttribute="trailing" constant="6" id="tpCon1"/>
-                    <constraint firstItem="tinyproxyPortField" firstAttribute="centerY" secondItem="tpPortLabel" secondAttribute="centerY" id="tpCon2"/>
+                    <constraint firstItem="proxyPortField" firstAttribute="leading" secondItem="tpPortLabel" secondAttribute="trailing" constant="6" id="tpCon1"/>
+                    <constraint firstItem="proxyPortField" firstAttribute="centerY" secondItem="tpPortLabel" secondAttribute="centerY" id="tpCon2"/>
                     <constraint firstItem="tpPortLabel" firstAttribute="centerY" secondItem="gtS-Xr-IKV" secondAttribute="centerY" id="tpCon3"/>
                     <constraint firstItem="tpPortLabel" firstAttribute="leading" secondItem="jTh-yx-o3m" secondAttribute="trailing" constant="20" id="tpCon3a"/>
-                    <constraint firstItem="tinyproxyUsernameField" firstAttribute="leading" secondItem="tpUserLabel" secondAttribute="trailing" constant="15" id="tpCon4"/>
+                    <constraint firstItem="proxyUsernameField" firstAttribute="leading" secondItem="tpUserLabel" secondAttribute="trailing" constant="15" id="tpCon4"/>
                     <constraint firstItem="tpUserLabel" firstAttribute="top" secondItem="gtS-Xr-IKV" secondAttribute="bottom" constant="28" id="tpCon5"/>
-                    <constraint firstItem="tinyproxyPasswordField" firstAttribute="leading" secondItem="tpPassLabel" secondAttribute="trailing" constant="15" id="tpCon7"/>
-                    <constraint firstItem="tinyproxyPasswordField" firstAttribute="centerY" secondItem="tpPassLabel" secondAttribute="centerY" id="tpCon8"/>
-                    <constraint firstItem="tinyproxyPasswordField" firstAttribute="leading" secondItem="G09-DG-h3I" secondAttribute="leading" id="tpCon7a"/>
-                    <constraint firstItem="tinyproxyUsernameField" firstAttribute="centerY" secondItem="tpUserLabel" secondAttribute="centerY" id="tpCon9"/>
+                    <constraint firstItem="proxyPasswordField" firstAttribute="leading" secondItem="tpPassLabel" secondAttribute="trailing" constant="15" id="tpCon7"/>
+                    <constraint firstItem="proxyPasswordField" firstAttribute="centerY" secondItem="tpPassLabel" secondAttribute="centerY" id="tpCon8"/>
+                    <constraint firstItem="proxyPasswordField" firstAttribute="leading" secondItem="G09-DG-h3I" secondAttribute="leading" id="tpCon7a"/>
+                    <constraint firstItem="proxyUsernameField" firstAttribute="centerY" secondItem="tpUserLabel" secondAttribute="centerY" id="tpCon9"/>
                     <constraint firstItem="tpPassLabel" firstAttribute="centerY" secondItem="tpUserLabel" secondAttribute="centerY" id="tpCon10"/>
-                    <constraint firstItem="tpPassLabel" firstAttribute="leading" secondItem="tinyproxyUsernameField" secondAttribute="trailing" constant="15" id="tpCon11"/>
+                    <constraint firstItem="tpPassLabel" firstAttribute="leading" secondItem="proxyUsernameField" secondAttribute="trailing" constant="15" id="tpCon11"/>
                 </constraints>
             </view>
             <connections>

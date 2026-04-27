@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if UserDefaults.standard.bool(forKey: USERDEFAULTS_KCPROXY_ON) {
             KcpProxy.shared.start()
-            TinyproxyManager.shared.start()
+            ProxyManager.shared.start()
         }
         
         let runningApps = NSWorkspace.shared.runningApplications
